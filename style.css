@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    overflow: hidden;
+    /* min-height: 100vh; */
+}
+.container{
+    position: relative;
+    transform: translateY(-100px);
+}
+.container::before{
+    content: "";
+    position: absolute;
+    top: 200px;
+    width: 200px;
+    height: 200px;
+    background: #fff;
+    border-radius: 50%;
+    animation: animateCircle 3s ease-in-out infinite;
+    
+}
+ @keyframes animateCircle{
+    0%{
+        transform: translateX(15px);
+    }
+    50%{
+        transform: translateX(-15px);
+    }
+    100%{
+        transform: translateX(15px);
+    }
+} 
+
+.container::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 400px;
+    width: 600px;
+    height: 600px;
+    background: #fe4e4e;
+    border-radius: 50%;
+}
+ .container .circle{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    animation: anim 4s ease-in-out infinite;
+}
+@keyframes anim{
+    0%{
+        transform: rotate(50deg);
+    }
+    50%{
+        transform: rotate(-50deg);
+    }
+    100%{
+        transform: rotate(50deg);
+    } 
+}
+
+.container .circle::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 200px;
+    height: 100px;
+    background: #06c8f0;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+}
+
+ .container .circle .ball{
+     position: absolute; 
+     top: 50%; 
+     left: -15%; 
+     width: 40px; 
+     height: 40px;
+     background: #fff;
+     border-radius: 50%; 
+     transform: translateY(-100%);
+     animation: animateball 4s ease-in-out infinite;
+ }
+
+@keyframes animateball{
+    0%{
+        transform: translateY(-100%) translateX(-100%) ;
+
+    }
+    50%{
+        transform: translateY(-100%) translateX(700%) ;
+    }
+    100%{
+    transform: translateY(-100%) translateX(-100%);
+}
+
+}   
+
+
+
+
+
+
+
+
